@@ -8,8 +8,7 @@ from django.contrib import messages
 from django.forms.forms import pretty_name
 from django.forms.models import inlineformset_factory, modelform_factory
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from django.utils.html import format_html
 
 from .forms import ImportCSVForm
