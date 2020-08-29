@@ -147,6 +147,15 @@ class UploadCSVAdminMixin(object):
             if self.pretty_csv_inline.get('help_text'):
                 form['csv_file'].help_text = self.pretty_csv_inline['help_text']
 
-        context.update({'form': form})
+        context.update({'title': 'Import data',
+                'root_path': 'admin',
+                'app_label': opts['app_label'],
+                'opts': opts,
+                'form': form,
+                'confirmed': confirmed,
+                'formset': formset,
+                'headers': headers,
+                'initial_data': initial_data})
+        
         return render(request, 'admin/inline_csv_importer/inline_csv_importer.html', context)
     
