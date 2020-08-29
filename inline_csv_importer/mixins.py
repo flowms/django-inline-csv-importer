@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 import unicodecsv as csv
 
+from django.contrib import admin
 from django.conf.urls import url
 from django.contrib import messages
 from django.forms.forms import pretty_name
@@ -86,6 +87,8 @@ class UploadCSVAdminMixin(object):
         formset = None
         initial_data = []
         headers = []
+        
+        context = admin.site.each_context(request)
 
         # Do checks on defined csv_inline fieldset.
         message = self.do_checks()
