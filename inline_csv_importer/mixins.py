@@ -34,8 +34,8 @@ class UploadCSVAdminMixin(object):
 
         csv_inline = {}
         for line in self.csv_inline:
-            csv_inline['name'] = self.csv_inline[0][0]
-            csv_inline.update(self.csv_inline[0][1])
+            csv_inline['name'] = self.csv_inline[0][0].strip
+            csv_inline.update(self.csv_inline[0][1].strip)
         return csv_inline
 
     def do_checks(self):
