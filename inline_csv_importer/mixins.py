@@ -151,7 +151,4 @@ class UploadCSVAdminMixin(object):
                 'app_label': opts['app_label'],
                 'opts': opts,
                 'form': form,
-                'confirmed': confirmed,
-                'formset': formset,
-                'headers': headers,
             })
