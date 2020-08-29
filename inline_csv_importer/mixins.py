@@ -136,6 +136,7 @@ class UploadCSVAdminMixin(object):
             else:
                 formset = self.build_formset(model_form)
                 formset = formset(request.POST)
+                formset.clean()
                 if formset.is_valid():
                     obj = self.get_object(request, obj_id)
                     formset.instance = obj
