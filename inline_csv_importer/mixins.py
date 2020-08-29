@@ -154,5 +154,4 @@ class UploadCSVAdminMixin(object):
                 'confirmed': confirmed,
                 'formset': formset,
                 'headers': headers,
-                'initial_data': initial_data,
             })
