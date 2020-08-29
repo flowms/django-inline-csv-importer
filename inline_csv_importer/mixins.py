@@ -147,5 +147,5 @@ class UploadCSVAdminMixin(object):
             if self.pretty_csv_inline.get('help_text'):
                 form['csv_file'].help_text = self.pretty_csv_inline['help_text']
 
-        return render(request, 'admin/inline_csv_importer/inline_csv_importer.html', context)
+        return render(request, 'admin/inline_csv_importer/inline_csv_importer.html', {'form': form},  context)
     
