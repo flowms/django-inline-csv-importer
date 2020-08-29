@@ -145,8 +145,7 @@ class UploadCSVAdminMixin(object):
             if self.pretty_csv_inline.get('help_text'):
                 form['csv_file'].help_text = self.pretty_csv_inline['help_text']
 
-        return render_to_response(
-            'admin/inline_csv_importer/inline_csv_importer.html',
+        return render(request, 'admin/inline_csv_importer/inline_csv_importer.html',
             {
                 'title': 'Import data',
                 'root_path': 'admin',
@@ -157,6 +156,4 @@ class UploadCSVAdminMixin(object):
                 'formset': formset,
                 'headers': headers,
                 'initial_data': initial_data,
-            },
-            RequestContext(request)
-        )
+            })
