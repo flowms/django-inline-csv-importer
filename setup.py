@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
 
 install_requires = [
-    'Django>=1.6,<=1.9',
+    'Django>=1.6,<=2.0.3',
     'unicodecsv>=0.14.1',
 ]
 
@@ -29,7 +29,7 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.9',
+        'Framework :: Django :: 2.0.3',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
