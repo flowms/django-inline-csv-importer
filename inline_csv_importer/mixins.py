@@ -140,6 +140,7 @@ class UploadCSVAdminMixin(object):
                     obj = self.get_object(request, obj_id)
                     formset.instance = obj
                     formset.save()
+                    MessageAdmin.log_change(self, request, obj, 'Data Imported')
                     messages.success(request, 'Imported successfully.')
                     return HttpResponseRedirect('../')
         else:
