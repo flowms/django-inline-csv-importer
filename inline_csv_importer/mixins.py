@@ -147,7 +147,8 @@ class UploadCSVAdminMixin(object):
             if self.pretty_csv_inline.get('help_text'):
                 form['csv_file'].help_text = self.pretty_csv_inline['help_text']
 
-        context.update({'root_path': 'admin',
+        context.update({'title': str(self),
+                'root_path': 'admin',
                 'app_label': opts['app_label'],
                 'opts': opts,
                 'form': form,
