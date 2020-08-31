@@ -117,7 +117,12 @@ class UploadCSVAdminMixin(object):
                 csv_file = csv.reader(csv_file, skipinitialspace=True)
 
                 # Skip headers
-                next(csv_file, None)
+                try:
+                    next(csv_file, None)
+                except:
+                    messages.error(request, 'Not a valid csv file.')
+                    return HttpResponseRedirect('../')
+                    
 
                 # Make headers pretty.
                 headers = map(pretty_name, self.pretty_csv_inline['fields'])
