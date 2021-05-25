@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
 
 install_requires = [
-    'Django>=1.6,<=2.0.3',
+    'Django>=1.6,<=2.2.13',
     'unicodecsv>=0.14.1',
 ]
 
